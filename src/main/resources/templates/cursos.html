@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js">
+ <link rel="stylesheet" href=../css/estilos.css >
+</head> 
+<body>
+<div class="container">
+	<div class="row">
+		<h1 class="titulo">Academia Cachimbo</h1>
+	</div>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html"><center>CURSOS </center>  </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#"><center>ESTUDIANTES</center></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#"><center>MATRICULA</center></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> <center>NOTAS</center> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><center>PROFESORES</center></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div>
+    	<center><h3 th:text="${titulo}"></h3></center>
+    </div>
+  
+    <div class="row">
+    	<div class="col-md-6">
+		    <form th:action="@{/cursos}" method="post">
+			    <div class="mb-3">
+						<label class="form-label" for="codCurso">Codigo de Curso</label>
+							<input class="form-control" type="text" name="codCurso" id="codCurso">
+				</div>
+				<div class="mb-3">
+						<label class="form-label" for="nomCurso">Nombre de Curso</label>
+							<input class="form-control" type="text" name="nomCurso" id="nomCurso">
+				</div>
+				<div class="mb-3">
+						<label class="form-label" for="profCargo">Profesor Asignado</label>
+							<input class="form-control" type="text" name="profCargo" id="profCargo">
+				</div>
+				<div class="mb-3">
+						<label class="form-label" for="horasDictadas">Horas</label>
+							<input class="form-control" type="text" name="horasDictadas" id="horasDictadas">
+				</div>
+				<div>
+					<input type="submit" value="Enviar datos">
+				</div>
+				
+			</form>
+			
+		</div>
+		<div class="col-md-6">
+			<img class="logoCurso" alt="" src="../imagenes/curso.png">
+		</div>
+		
+		
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
